@@ -436,62 +436,119 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 
 .hero-note svg { color: var(--green-dark); flex-shrink: 0; }
 
-/* Карточка-визитка справа */
-.hero-card {
+/* Баннер акций справа (карусель, поддерживает фото акций) */
+.hero-banner {
   position: relative;
-  background: var(--grad);
   border-radius: var(--radius-lg);
-  padding: 40px 36px;
-  color: #fff;
-  box-shadow: 0 24px 60px rgba(46, 128, 181, 0.35);
   overflow: hidden;
+  min-height: 460px;
+  box-shadow: 0 24px 60px rgba(46, 128, 181, 0.35);
 }
 
-.hero-card::before {
+.banner-slide {
+  position: absolute;
+  inset: 0;
+  padding: 44px 40px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.banner-slide.active { opacity: 1; transform: none; pointer-events: auto; }
+
+.banner-slide::before {
   content: "";
   position: absolute;
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
-  top: -110px;
+  background: rgba(255, 255, 255, 0.12);
+  top: -100px;
   right: -80px;
 }
 
-.hero-card::after {
+.banner-slide::after {
   content: "";
   position: absolute;
-  width: 180px;
-  height: 180px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  bottom: -80px;
+  background: rgba(255, 255, 255, 0.09);
+  bottom: -70px;
   left: -60px;
 }
 
-.hero-card .tooth {
-  width: 84px;
-  height: 84px;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 24px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 24px;
-  backdrop-filter: blur(4px);
+.banner-slide.s1 { background: linear-gradient(135deg, #4db648 0%, #38a889 55%, #2e80b5 100%); }
+.banner-slide.s2 { background: linear-gradient(135deg, #14425e 0%, #1f6494 55%, #2b7a4d 140%); }
+.banner-slide.s3 { background: linear-gradient(135deg, #2e80b5 0%, #38a889 60%, #57c24e 130%); }
+
+/* Фото акции: <img class="banner-photo" src="..."> внутри слайда */
+.banner-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
 }
 
-.hero-card .tooth img { width: 56px; }
+.banner-badge {
+  position: relative;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(4px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
 
-.hero-card h3 { font-size: 22px; margin-bottom: 10px; position: relative; }
+.banner-slide h3 { position: relative; font-size: 25px; margin-bottom: 12px; }
 
-.hero-card p { position: relative; opacity: 0.92; font-size: 16px; margin-bottom: 26px; }
+.banner-slide p { position: relative; font-size: 16px; opacity: 0.92; max-width: 420px; }
 
-.hero-card ul { position: relative; list-style: none; display: grid; gap: 12px; margin-bottom: 30px; }
+.banner-price {
+  position: relative;
+  font-family: var(--font-head);
+  font-size: 40px;
+  font-weight: 700;
+  margin: 16px 0 24px;
+}
 
-.hero-card li { display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; font-weight: 600; }
+.banner-slide .btn { position: relative; align-self: flex-start; }
 
-.hero-card li svg { flex-shrink: 0; margin-top: 3px; }
+.banner-dots {
+  position: absolute;
+  left: 40px;
+  bottom: 26px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.banner-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.banner-dot:hover { background: #fff; }
+
+.banner-dot.active { width: 28px; background: #fff; }
 
 /* ---------- Полоса статистики ---------- */
 
@@ -976,7 +1033,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
   background: #fff;
   border-radius: var(--radius-lg);
   padding: 42px 38px;
-  width: min(480px, 100%);
+  width: min(620px, 100%);
   position: relative;
   transform: translateY(24px) scale(0.97);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
@@ -1006,9 +1063,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 
 .modal-box h3 { font-size: 22px; margin-bottom: 8px; }
 
-.modal-box > p { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
-
-.modal-box form { display: grid; gap: 14px; }
+.wiz-fields { display: grid; gap: 14px; margin-top: 18px; }
 
 .modal-box label { font-size: 14px; font-weight: 700; }
 
@@ -1036,6 +1091,220 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 .modal-phones a { font-weight: 800; color: var(--ink); }
 
 .modal-phones a:hover { color: var(--blue); }
+
+/* ---------- Пошаговый мастер записи ---------- */
+
+.wiz-step-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.wiz-progress { display: flex; gap: 8px; margin: 18px 0 22px; }
+
+.wiz-progress span {
+  flex: 1;
+  height: 5px;
+  border-radius: 99px;
+  background: var(--line);
+  transition: background-color 0.35s ease;
+}
+
+.wiz-progress span.done { background: var(--grad); }
+
+.wiz-hint { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+
+.opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.opt-card {
+  position: relative;
+  text-align: left;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.opt-card:hover {
+  border-color: rgba(46, 128, 181, 0.5);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.opt-card .t {
+  font-weight: 800;
+  font-size: 15.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.opt-card .t svg { color: var(--blue); flex-shrink: 0; }
+
+.opt-card small { font-size: 13px; color: var(--muted); line-height: 1.45; }
+
+.opt-card.selected {
+  border-color: var(--green);
+  background: linear-gradient(120deg, rgba(87, 194, 78, 0.1), rgba(46, 128, 181, 0.1));
+  box-shadow: 0 0 0 3px rgba(87, 194, 78, 0.18);
+}
+
+.opt-card.selected::after {
+  content: "✓";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--grad);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+/* Карточка врача в мастере */
+.opt-card.doc { flex-direction: row; align-items: center; gap: 14px; }
+
+.opt-card.doc .ava {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--grad);
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.opt-card.doc .doc-info { display: flex; flex-direction: column; gap: 2px; }
+
+/* Календарь */
+.cal { border: 1.5px solid var(--line); border-radius: 16px; padding: 18px; }
+
+.cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.cal-head strong {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.cal-nav {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: var(--ink-soft);
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.cal-nav:hover:not(:disabled) { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+
+.cal-nav:disabled { opacity: 0.35; cursor: default; }
+
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+
+.cal-dow {
+  text-align: center;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 4px 0;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cal-day:hover:not(:disabled):not(.selected) { border-color: var(--green); background: var(--bg-tint); }
+
+.cal-day:disabled { color: #c2ced8; cursor: default; font-weight: 500; }
+
+.cal-day.selected {
+  background: var(--grad);
+  color: #fff;
+  box-shadow: var(--shadow-green);
+  transform: scale(1.06);
+}
+
+.cal-day.empty { visibility: hidden; }
+
+/* Сводка на последнем шаге */
+.wiz-summary { display: grid; gap: 8px; }
+
+.sum-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--bg-tint-blue);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.sum-row span { color: var(--muted); flex-shrink: 0; }
+
+.sum-row b { text-align: right; }
+
+.wiz-footer { display: flex; justify-content: space-between; gap: 14px; margin-top: 24px; }
+
+.btn-back { background: #eef4f8; color: var(--ink-soft); }
+
+.btn-back:hover:not(:disabled) { background: #e2ecf3; transform: translateY(-2px); }
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none;
+}
+
+.btn:disabled::after { display: none; }
+
+.modal-note { margin-top: 16px; font-size: 13.5px; color: var(--muted); text-align: center; }
+
+.modal-note a { font-weight: 800; color: var(--ink); }
+
+.modal-note a:hover { color: var(--blue); }
 
 .form-ok {
   display: none;
@@ -1082,7 +1351,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
   .header-phone { display: none; }
   .burger { display: flex; }
   .hero-in { grid-template-columns: 1fr; }
-  .hero-card { max-width: 520px; }
+  .hero-banner { max-width: 560px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid, .doctors-grid { grid-template-columns: repeat(2, 1fr); }
   .prices-wrap { grid-template-columns: 1fr; }
@@ -1100,4 +1369,11 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
   .branches { grid-template-columns: 1fr; }
   .header .btn { display: none; }
   .hero-actions .btn { width: 100%; }
+  .hero-banner { min-height: 420px; }
+  .banner-slide { padding: 32px 26px 64px; }
+  .banner-dots { left: 26px; }
+  .opt-grid { grid-template-columns: 1fr; }
+  .modal-box { padding: 32px 22px; }
+  .wiz-footer { flex-direction: row; }
+  .wiz-footer .btn { flex: 1; padding-inline: 18px; }
 }
