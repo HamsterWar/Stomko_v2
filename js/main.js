@@ -118,6 +118,45 @@ document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(
   restart();
 })();
 
+// --- Версия 2: полноэкранный фотослайдер в hero (index2.html) ---
+(() => {
+  const hero = document.getElementById('heroSlider');
+  if (!hero) return;
+  const slides = [...hero.querySelectorAll('.hero-slide')];
+  const dotsWrap = hero.querySelector('.hero-full-dots');
+  let idx = 0;
+  let timer = null;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'banner-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Фото ' + (i + 1));
+    dot.addEventListener('click', () => {
+      go(i);
+      restart();
+    });
+    dotsWrap.appendChild(dot);
+  });
+
+  const dots = [...dotsWrap.children];
+
+  const go = (i) => {
+    slides[idx].classList.remove('active');
+    dots[idx].classList.remove('active');
+    idx = i;
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+  };
+
+  const restart = () => {
+    if (timer) clearInterval(timer);
+    if (!reduceMotion) timer = setInterval(() => go((idx + 1) % slides.length), 6000);
+  };
+
+  restart();
+})();
+
 // ============================================================
 // Пошаговый мастер записи
 // ============================================================
