@@ -1472,3 +1472,229 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
   .hero-full-in { padding-top: 120px; padding-bottom: 70px; }
   .hero-glass { padding: 32px 24px; }
 }
+
+/* ============================================================
+   Версия 2: правки по дизайн-ревью
+   Стили намеренно ограничены .page-v2 и не затрагивают index.html.
+   ============================================================ */
+
+.page-v2 {
+  --blue: var(--green);
+  --blue-dark: #245b42;
+  --ink: #172b25;
+  --ink-soft: #465a53;
+  --muted: #66766f;
+  --bg-tint: #fff;
+  --bg-tint-blue: #fff;
+  --line: #e8ecea;
+  --font-head: "Manrope", system-ui, sans-serif;
+  background: #fff;
+}
+
+.page-v2 h1,
+.page-v2 h2,
+.page-v2 h3,
+.page-v2 .logo,
+.page-v2 .stat-num,
+.page-v2 .promo-price,
+.page-v2 .coupon-strip strong,
+.page-v2 .why-card strong,
+.page-v2 .doctor h3,
+.page-v2 .price-row strong,
+.page-v2 .hours strong,
+.page-v2 .form-ok h4 {
+  font-family: var(--font-body);
+}
+
+.page-v2 .promos,
+.page-v2 .why,
+.page-v2 .prices,
+.page-v2 .contacts,
+.page-v2 .wizard-summary {
+  background: #fff;
+}
+
+.page-v2 .topbar {
+  background: #245b42;
+}
+
+.page-v2 .topbar-in {
+  justify-content: flex-start;
+  gap: 18px 30px;
+  padding-block: 7px;
+}
+
+.page-v2 .topbar-item {
+  font-size: 12.5px;
+}
+
+.page-v2 .header-in {
+  gap: 20px;
+  padding-block: 10px;
+}
+
+.page-v2 .header.scrolled .header-in {
+  padding-block: 7px;
+}
+
+.page-v2 .logo {
+  gap: 22px;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.page-v2 .header .logo img {
+  width: 96px;
+  flex: 0 0 96px;
+}
+
+.page-v2 .logo small {
+  margin-top: 4px;
+  font-size: 11px;
+  letter-spacing: .045em;
+  text-transform: none;
+}
+
+.page-v2 .nav {
+  margin-left: auto;
+  margin-right: 4px;
+  gap: 2px;
+}
+
+.page-v2 .nav a {
+  padding-inline: 11px;
+}
+
+.page-v2 .header .btn {
+  margin-left: 0;
+}
+
+/* Один акцентный цвет: зелёный из логотипа. */
+.page-v2 .accent,
+.page-v2 .section-title .accent,
+.page-v2 .hero h1 .accent,
+.page-v2 .service-link,
+.page-v2 .service-icon,
+.page-v2 .mobile-menu a:hover {
+  color: var(--green-dark);
+}
+
+/* Теги выглядят как подписи с подчёркиванием, а не как плашки. */
+.page-v2 .section-tag,
+.page-v2 .hero-tag,
+.page-v2 .promo-badge {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--green-dark);
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid var(--green);
+  border-radius: 0;
+  padding: 0 0 5px;
+  text-transform: none;
+  letter-spacing: .02em;
+}
+
+.page-v2 .section-tag::before,
+.page-v2 .hero-tag::before {
+  display: none;
+}
+
+.page-v2 .promo.dark .promo-badge {
+  color: #fff;
+  background: transparent;
+  border-bottom-color: rgba(255, 255, 255, .72);
+}
+
+.page-v2 .promo.dark,
+.page-v2 .promo.dark:hover {
+  background: #245b42;
+  border-color: #245b42;
+}
+
+/* Спокойные состояния: без бликов, пульса, подпрыгивания и вращения. */
+.page-v2 .btn,
+.page-v2 .service,
+.page-v2 .promo,
+.page-v2 .why-card {
+  will-change: auto;
+}
+
+.page-v2 .btn-primary::after,
+.page-v2 .btn-pulse::before,
+.page-v2 .btn-outline::before {
+  display: none;
+}
+
+.page-v2 .btn:hover,
+.page-v2 .btn:active,
+.page-v2 .promo:hover,
+.page-v2 .service:hover,
+.page-v2 .why-card:hover {
+  transform: none;
+}
+
+.page-v2 .btn-primary:hover {
+  background: var(--green-dark);
+  box-shadow: var(--shadow-green);
+}
+
+.page-v2 .btn-outline {
+  color: var(--green-dark);
+  border-color: rgba(87, 194, 78, .42);
+}
+
+.page-v2 .btn-outline:hover {
+  color: #fff;
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  box-shadow: none;
+}
+
+.page-v2 .btn-ghost:hover {
+  color: var(--green-dark);
+  box-shadow: none;
+}
+
+.page-v2 .btn:hover svg,
+.page-v2 .service:hover .service-link svg {
+  transform: none;
+}
+
+.page-v2 .service:hover,
+.page-v2 .promo:hover,
+.page-v2 .why-card:hover {
+  background: #f4f5f4;
+  box-shadow: var(--shadow-sm);
+  border-color: #dfe4e1;
+}
+
+.page-v2 .service::before {
+  background: #f4f5f4;
+}
+
+.page-v2 .service:hover .service-icon {
+  background: #e9ecea;
+  color: var(--green-dark);
+  transform: none;
+}
+
+.page-v2 .reveal {
+  transform: translateY(16px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+
+.page-v2 .reveal.visible {
+  transform: translateY(0);
+}
+
+@media (max-width: 1080px) {
+  .page-v2 .header-in { padding-block: 9px; }
+  .page-v2 .header .logo img { width: 82px; flex-basis: 82px; }
+}
+
+@media (max-width: 680px) {
+  .page-v2 .logo { gap: 14px; font-size: 16px; }
+  .page-v2 .header .logo img { width: 64px; flex-basis: 64px; }
+  .page-v2 .hero-full-in { padding-top: 112px; }
+}
