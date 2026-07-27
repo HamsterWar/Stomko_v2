@@ -1544,8 +1544,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 }
 
 .page-v2 .header .logo img {
-  width: 96px;
-  flex: 0 0 96px;
+  width: 88px;
+  flex: 0 0 88px;
 }
 
 .page-v2 .logo small {
@@ -1690,11 +1690,11 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 
 @media (max-width: 1080px) {
   .page-v2 .header-in { padding-block: 9px; }
-  .page-v2 .header .logo img { width: 82px; flex-basis: 82px; }
+  .page-v2 .header .logo img { width: 76px; flex-basis: 76px; }
 }
 
 @media (max-width: 680px) {
   .page-v2 .logo { gap: 14px; font-size: 16px; }
-  .page-v2 .header .logo img { width: 64px; flex-basis: 64px; }
+  .page-v2 .header .logo img { width: 60px; flex-basis: 60px; }
   .page-v2 .hero-full-in { padding-top: 112px; }
 }
