@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стоматология «Оптимальный выбор» — Москва, Сокол и Беломорская</title>
+  <meta name="description" content="Стоматологическая клиника «Оптимальный выбор» в Москве работает с 1995 года. Имплантация, протезирование, лечение зубов, хирургия, диагностика. Два филиала: Сокол и Беломорская.">
+  <link rel="icon" href="assets/logo-optvybor.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-v2 page-v4" data-version="index4">
+
+  <!-- ======== Шапка ======== -->
+  <header class="header" id="header">
+    <div class="topbar">
+      <div class="container topbar-in">
+        <div class="topbar-branch">
+          <a class="topbar-item" href="tel:+74991588471">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>м. Сокол · Ленинградский пр-т, 77, к. 4</span>
+            <b>8 (499) 158-84-71</b>
+          </a>
+          <a class="topbar-messenger" href="https://wa.me/79260749710" target="_blank" rel="noopener" aria-label="Написать в WhatsApp — филиал на Соколе">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.2A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 8.5c.7 3.2 2.8 5.3 6 6"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="topbar-branch">
+          <a class="topbar-item" href="tel:+74954518238">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>м. Беломорская · ул. Беломорская, 26</span>
+            <b>8 (495) 451-82-38</b>
+          </a>
+          <a class="topbar-messenger" href="https://wa.me/79255054617" target="_blank" rel="noopener" aria-label="Написать в WhatsApp — филиал на Беломорской">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.2A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 8.5c.7 3.2 2.8 5.3 6 6"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container header-in">
+      <a href="#" class="logo" aria-label="Оптимальный выбор — на главную">
+        <img src="assets/logo-optvybor.png" alt="Логотип клиники «Оптимальный выбор» — яблоко и зуб" width="88" height="70">
+        <span>Оптимальный выбор<small>стоматологическая клиника</small></span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#promos">Акции</a>
+        <a href="#services">Услуги</a>
+        <a href="#doctors">Врачи</a>
+        <a href="#prices">Цены</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button class="btn btn-primary" data-open-modal>Записаться</button>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#promos">Акции</a>
+    <a href="#services">Услуги</a>
+    <a href="#doctors">Врачи</a>
+    <a href="#prices">Цены</a>
+    <a href="#contacts">Контакты</a>
+    <a href="tel:+74991588471">Сокол: 8 (499) 158-84-71</a>
+    <a href="tel:+74954518238">Беломорская: 8 (495) 451-82-38</a>
+    <a class="mobile-messenger" href="https://wa.me/79260749710" target="_blank" rel="noopener">WhatsApp — Сокол</a>
+    <a class="mobile-messenger" href="https://wa.me/79255054617" target="_blank" rel="noopener">WhatsApp — Беломорская</a>
+  </div>
+
+  <!-- ======== Hero: полноэкранный слайдер ======== -->
+  <section class="hero hero-full" id="heroSlider">
+    <!-- Фоновые фотографии. Замените на снимки клиники в assets/ -->
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide active" style="background-image: url('assets/hero-1.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('assets/hero-3.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('assets/hero-2.jpg')"></div>
+    </div>
+    <div class="container hero-full-in">
+      <div class="hero-glass reveal">
+        <div class="hero-tag">Стоматология в Москве с 1995 года</div>
+        <h1>30 лет заботы<br>о вашей <span class="accent">улыбке</span></h1>
+        <p class="hero-text">
+          Уютная, спокойная и доброжелательная атмосфера, современное оборудование
+          и врачи, к которым возвращаются. Два филиала в Москве — на Соколе и Беломорской.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-pulse" data-open-modal>
+            <span>Записаться на приём</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <a href="#services" class="btn btn-outline"><span>Наши услуги</span></a>
+        </div>
+        <div class="hero-note">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+          Консультация — бесплатно
+        </div>
+      </div>
+    </div>
+    <div class="hero-full-dots" aria-label="Переключение фотографий"></div>
+  </section>
+
+  <!-- ======== Статистика ======== -->
+  <section class="stats">
+    <div class="container stats-in">
+      <div class="stat reveal">
+        <div class="stat-num"><span data-count="30">0</span>&nbsp;лет</div>
+        <div class="stat-label">клиника заботится о здоровье и красоте ваших улыбок</div>
+      </div>
+      <div class="stat reveal reveal-d1">
+        <div class="stat-num"><span data-count="85">0</span>%</div>
+        <div class="stat-label">пациентов приходят к нам по рекомендации</div>
+      </div>
+      <div class="stat reveal reveal-d2">
+        <div class="stat-num"><span data-count="95">0</span>%</div>
+        <div class="stat-label">пациентов обращаются к нам за повторными услугами</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Акции ======== -->
+  <section class="section promos" id="promos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Акции</span>
+        <h2 class="section-title">Выгодные <span class="accent">предложения</span></h2>
+        <p class="section-sub">Следите за акциями клиники — забота о зубах может быть доступнее.</p>
+      </div>
+      <div class="promo-grid">
+        <article class="promo reveal" data-open-modal>
+          <span class="promo-badge">Гигиена</span>
+          <h3>Профессиональная гигиена полости рта</h3>
+          <p>Удаление твёрдого зубного налёта при помощи ультразвука.</p>
+          <div class="promo-price">6 000 ₽</div>
+        </article>
+        <article class="promo reveal reveal-d1" data-open-modal>
+          <span class="promo-badge">По понедельникам</span>
+          <h3>Гигиена + отбеливание</h3>
+          <p>Профессиональная гигиена полости рта за 6 000 ₽ и отбеливание — за 12 000 ₽.</p>
+          <div class="promo-price">12 000 ₽ <small>отбеливание</small></div>
+          <div class="promo-note">Акция действует только по понедельникам</div>
+        </article>
+        <article class="promo reveal reveal-d2" data-open-modal>
+          <span class="promo-badge">Постоянным клиентам</span>
+          <h3>Скидка 10% на все услуги</h3>
+          <p>Со второго визита к врачу. Для пенсионеров — уже с первого визита при предъявлении документов.</p>
+          <div class="promo-price">−10%</div>
+        </article>
+      </div>
+      <div class="coupon-strip reveal">
+        <div>
+          <strong>Купон на скидку 5%</strong>
+          <p>Получите скидку 5% по купону с нашего сайта в разделе «Акции».</p>
+        </div>
+        <button class="btn btn-ghost" data-open-modal><span>Получить купон</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Услуги ======== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Услуги</span>
+        <h2 class="section-title">Полный спектр <span class="accent">стоматологической помощи</span></h2>
+        <p class="section-sub">От диагностики и профилактики до имплантации и протезирования.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service reveal">
+          <div class="service-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-4 2 5 5 0 0 0-4-1c-2 .5-3 2.5-3 4.5C1 12 4 16 5.5 21c.3 1 1.7 1 2 0L9 16h6l1.5 5c.3 1 1.7 1 2 0C20 16 23 12 23 7.5c0-2-1-4-3-4.5a5 5 0 0 0-4 1 5 5 0 0 0-4-2Z" transform="scale(0.92) translate(1,1)"/></svg>
+          </div>
+          <h3>Имплантация</h3>
+          <p>Установка зубных имплантов, коронки на импланты, экспресс-имплантация зубов.</p>
+          <span class="service-link">Подробнее
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </article>
+        <article class="service reveal reveal-d1">
+          <div class="service-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7Z"/><path d="M5 16v4h14v-4"/></svg>
+          </div>
+          <h3>Протезирование</h3>
+          <p>Металлокерамика, безметалловая керамика, съёмные протезы, протезы без нёба.</p>
+          <span class="service-link">Подробнее
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </article>
+        <article class="service reveal reveal-d2">
+          <div class="service-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3>Лечение зубов</h3>
+          <p>Лечение кариеса и пульпита, пломбирование, реставрация и наращивание зубов.</p>
+          <span class="service-link">Подробнее
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </article>
+        <article class="service reveal">
+          <div class="service-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 20 4"/><path d="m15 4 5 5"/><path d="M4 20c2-1 3-3 3-5"/></svg>
+          </div>
+          <h3>Хирургия</h3>
+          <p>Удаление зубов любой сложности, в том числе зубов мудрости и зубов с кистой.</p>
+          <span class="service-link">Подробнее
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </article>
+        <article class="service reveal reveal-d1">
+          <div class="service-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="4"/><path d="M12 8v.01M12 16v.01M8 12h.01M16 12h.01"/></svg>
+          </div>
+          <h3>Диагностика</h3>
+          <p>Прицельный снимок, визиограф, панорамный снимок (ортопантомограмма).</p>
+          <span class="service-link">Подробнее
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </article>
+        <article class="service reveal reveal-d2">
+          <div class="service-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M5.6 5.6l1.4 1.4M3 12h2M5.6 18.4l1.4-1.4M12 19v2M18.4 18.4l-1.4-1.4M19 12h2M18.4 5.6l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3>Гигиена и отбеливание</h3>
+          <p>Удаление зубного камня, ультразвуковая чистка, профессиональное отбеливание, виниры.</p>
+          <span class="service-link">Подробнее
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Преимущества ======== -->
+  <section class="section why">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Почему мы</span>
+        <h2 class="section-title">Нас выбирают <span class="accent">и рекомендуют</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="num">01</div>
+          <h3>30 лет опыта</h3>
+          <p>Клиника работает с 1995 года и заслужила доверие нескольких поколений пациентов.</p>
+        </div>
+        <div class="why-card reveal reveal-d1">
+          <div class="num">02</div>
+          <h3>Доброжелательная атмосфера</h3>
+          <p>Уютная, спокойная обстановка — лечение без стресса для взрослых и детей.</p>
+        </div>
+        <div class="why-card reveal reveal-d2">
+          <div class="num">03</div>
+          <h3>Стерильность и безопасность</h3>
+          <p>Полный цикл стерилизации и одноразовые инструменты на каждом приёме.</p>
+        </div>
+        <div class="why-card reveal reveal-d3">
+          <div class="num">04</div>
+          <h3>Бесплатная консультация</h3>
+          <p>Современное оборудование и честный план лечения — первая консультация бесплатно.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Врачи ======== -->
+  <section class="section" id="doctors">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Врачи</span>
+        <h2 class="section-title">Наши <span class="accent">специалисты</span></h2>
+        <p class="section-sub">Команда врачей, к которым пациенты возвращаются годами.</p>
+      </div>
+      <div class="doctors-grid">
+        <article class="doctor reveal">
+          <div class="doctor-avatar">МЮ</div>
+          <h3>Марков Юрий Сергеевич</h3>
+          <p>Врач стоматолог-ортопед, хирург</p>
+          <span class="chief">Главный врач</span>
+        </article>
+        <article class="doctor reveal reveal-d1">
+          <div class="doctor-avatar">ДВ</div>
+          <h3>Дарьина Валерия Николаевна</h3>
+          <p>Врач стоматолог-терапевт</p>
+        </article>
+        <article class="doctor reveal reveal-d2">
+          <div class="doctor-avatar">ДМ</div>
+          <h3>Девицкий Михаил Александрович</h3>
+          <p>Врач стоматолог-ортопед, хирург</p>
+        </article>
+        <article class="doctor reveal reveal-d3">
+          <div class="doctor-avatar">КЮ</div>
+          <h3>Кибенко Юлия Дмитриевна</h3>
+          <p>Врач стоматолог-терапевт</p>
+        </article>
+        <article class="doctor reveal">
+          <div class="doctor-avatar">ЕА</div>
+          <h3>Егоров Антон Михайлович</h3>
+          <p>Врач стоматолог-имплантолог</p>
+        </article>
+        <article class="doctor reveal reveal-d1">
+          <div class="doctor-avatar">МР</div>
+          <h3>Марков Роман Юрьевич</h3>
+          <p>Стоматолог-ортопед</p>
+        </article>
+        <article class="doctor reveal reveal-d2">
+          <div class="doctor-avatar">РП</div>
+          <h3>Рязанцева Полина Алексеевна</h3>
+          <p>Врач стоматолог-терапевт</p>
+        </article>
+        <article class="doctor reveal reveal-d3">
+          <div class="doctor-avatar">ГМ</div>
+          <h3>Голоднова Мария Александровна</h3>
+          <p>Врач стоматолог-терапевт</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Цены ======== -->
+  <section class="section" id="prices" style="padding-top: 0;">
+    <div class="container prices-wrap">
+      <div class="section-head reveal" style="margin-bottom: 0;">
+        <span class="section-tag">Цены</span>
+        <h2 class="section-title">Честные цены, <span class="accent">без сюрпризов</span></h2>
+        <p class="section-sub">
+          Точную стоимость лечения врач рассчитает после бесплатной консультации
+          и диагностики — вы всегда знаете, за что платите.
+        </p>
+        <div style="margin-top: 28px;">
+          <button class="btn btn-primary" data-open-modal>
+            <span>Узнать стоимость лечения</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="price-list">
+        <div class="price-row reveal">
+          <div class="name">Консультация врача<small>осмотр и план лечения</small></div>
+          <div class="val">Бесплатно</div>
+        </div>
+        <div class="price-row reveal reveal-d1">
+          <div class="name">Профессиональная гигиена<small>ультразвуковая чистка, по акции</small></div>
+          <div class="val">6 000 ₽</div>
+        </div>
+        <div class="price-row reveal reveal-d2">
+          <div class="name">Отбеливание<small>по понедельникам, по акции</small></div>
+          <div class="val">12 000 ₽</div>
+        </div>
+        <div class="price-row reveal reveal-d3">
+          <div class="name">Скидка постоянным клиентам<small>со второго визита, пенсионерам — с первого</small></div>
+          <div class="val">−10%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Контакты ======== -->
+  <section class="section contacts" id="contacts">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Контакты</span>
+        <h2 class="section-title">Два филиала <span class="accent">в Москве</span></h2>
+        <p class="section-sub">Выбирайте, куда вам удобнее — на Сокол или на Беломорскую.</p>
+      </div>
+      <div class="branches">
+        <div class="branch reveal">
+          <h3>
+            <span class="pin">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            Филиал на Соколе
+          </h3>
+          <div class="branch-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v10h14V10"/></svg>
+            Москва, Ленинградский проспект, 77, к. 4
+          </div>
+          <div class="branch-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <span><a href="tel:+74991588471">8 (499) 158-84-71</a>,&nbsp;<a href="tel:+74954519710">8 (495) 451-97-10</a></span>
+          </div>
+          <div class="branch-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+            <span>WhatsApp: <a class="wa" href="https://wa.me/79260749710" target="_blank" rel="noopener">+7 926 074-97-10</a></span>
+          </div>
+        </div>
+        <div class="branch reveal reveal-d1">
+          <h3>
+            <span class="pin">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            Филиал на Беломорской
+          </h3>
+          <div class="branch-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v10h14V10"/></svg>
+            Москва, ул. Беломорская, 26
+          </div>
+          <div class="branch-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <span><a href="tel:+74954518238">8 (495) 451-82-38</a>,&nbsp;<a href="tel:+79162040200">8 (916) 204-02-00</a></span>
+          </div>
+          <div class="branch-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+            <span>WhatsApp: <a class="wa" href="https://wa.me/79255054617" target="_blank" rel="noopener">+7 925 505-46-17</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="hours reveal">
+        <strong>График работы:</strong>
+        <span>Пн–Пт: 09:00 – 21:00</span>
+        <span>Сб: 09:00 – 18:00</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA ======== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="cta reveal">
+        <div>
+          <h2>Запишитесь на бесплатную консультацию</h2>
+          <p>Врач осмотрит полость рта, ответит на вопросы и составит план лечения. Это бесплатно и ни к чему не обязывает.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-pulse" data-open-modal>
+            <span>Записаться онлайн</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <a href="tel:+74991588471" class="btn btn-ghost"><span>8 (499) 158-84-71</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Футер ======== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-in">
+        <a href="#" class="logo">
+          <img src="assets/logo-optvybor.png" alt="Логотип клиники «Оптимальный выбор»" width="48" height="38">
+          <span>Оптимальный выбор<small>стоматологическая клиника</small></span>
+        </a>
+        <nav class="footer-nav" aria-label="Навигация в подвале">
+          <a href="#promos">Акции</a>
+          <a href="#services">Услуги</a>
+          <a href="#doctors">Врачи</a>
+          <a href="#prices">Цены</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 1995–2026 Стоматологическая клиника «Оптимальный выбор»</span>
+        <span>Москва: Сокол · Беломорская</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======== Модальное окно записи: пошаговый мастер ======== -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="wizTitle">
+    <div class="modal-box">
+      <button class="modal-close" data-close-modal aria-label="Закрыть окно">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div id="wizard">
+        <div class="wiz-step-label">Шаг <span id="wizStepNum">1</span> из 5</div>
+        <h3 id="wizTitle">Филиал</h3>
+        <div class="wiz-progress" id="wizProgress">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <!-- Шаг 1: филиал -->
+        <section class="wiz-pane" data-pane="1">
+          <p class="wiz-hint">Выберите ближайший филиал.</p>
+          <div class="opt-grid" data-group="branch">
+            <button type="button" class="opt-card" data-value="м. Сокол">
+              <span class="t">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                м. Сокол
+              </span>
+              <small>Ленинградский проспект, 77, корп. 4</small>
+              <small>Пн–Пт 09:00–21:00 · Сб 09:00–18:00</small>
+            </button>
+            <button type="button" class="opt-card" data-value="м. Беломорская">
+              <span class="t">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                м. Беломорская
+              </span>
+              <small>ул. Беломорская, 26</small>
+              <small>Пн–Пт 09:00–21:00 · Сб 09:00–18:00</small>
+            </button>
+          </div>
+        </section>
+
+        <!-- Шаг 2: услуга -->
+        <section class="wiz-pane" data-pane="2" hidden>
+          <p class="wiz-hint">Какая услуга вас интересует?</p>
+          <div class="opt-grid" data-group="service">
+            <button type="button" class="opt-card" data-value="consult">
+              <span class="t">Консультация</span>
+              <small>Осмотр и план лечения — бесплатно</small>
+            </button>
+            <button type="button" class="opt-card" data-value="therapy">
+              <span class="t">Лечение зубов</span>
+              <small>Кариес, пульпит, пломбирование, реставрация</small>
+            </button>
+            <button type="button" class="opt-card" data-value="implant">
+              <span class="t">Имплантация</span>
+              <small>Установка имплантов и коронок на импланты</small>
+            </button>
+            <button type="button" class="opt-card" data-value="prosthetics">
+              <span class="t">Протезирование</span>
+              <small>Керамика, съёмные протезы, протезы без нёба</small>
+            </button>
+            <button type="button" class="opt-card" data-value="surgery">
+              <span class="t">Хирургия</span>
+              <small>Удаление зубов любой сложности</small>
+            </button>
+            <button type="button" class="opt-card" data-value="hygiene">
+              <span class="t">Гигиена и отбеливание</span>
+              <small>Ультразвуковая чистка, отбеливание, виниры</small>
+            </button>
+            <button type="button" class="opt-card" data-value="diagnostics">
+              <span class="t">Диагностика</span>
+              <small>Прицельный и панорамный снимок, визиограф</small>
+            </button>
+          </div>
+        </section>
+
+        <!-- Шаг 3: врач (рендерится скриптом по выбранной услуге) -->
+        <section class="wiz-pane" data-pane="3" hidden>
+          <p class="wiz-hint">Выберите врача — или оставьте «любой», и мы подберём специалиста.</p>
+          <div class="opt-grid" data-group="doctor" id="doctorOptions"></div>
+        </section>
+
+        <!-- Шаг 4: дата -->
+        <section class="wiz-pane" data-pane="4" hidden>
+          <p class="wiz-hint">Выберите удобный день — точное время согласует администратор. Воскресенье — выходной.</p>
+          <div class="cal">
+            <div class="cal-head">
+              <button type="button" class="cal-nav" id="calPrev" aria-label="Предыдущий месяц">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <strong id="calTitle"></strong>
+              <button type="button" class="cal-nav" id="calNext" aria-label="Следующий месяц">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+        </section>
+
+        <!-- Шаг 5: контакты -->
+        <section class="wiz-pane" data-pane="5" hidden>
+          <p class="wiz-hint">Проверьте детали записи и оставьте контакты.</p>
+          <div class="wiz-summary" id="wizSummary"></div>
+          <div class="wiz-fields">
+            <label for="fName">Ваше имя
+              <input id="fName" name="name" type="text" placeholder="Как к вам обращаться" required autocomplete="name">
+            </label>
+            <label for="fPhone">Телефон
+              <input id="fPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
+            </label>
+          </div>
+        </section>
+
+        <div class="wiz-footer">
+          <button type="button" class="btn btn-back" id="wizBack">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Назад</span>
+          </button>
+          <button type="button" class="btn btn-primary" id="wizNext">
+            <span id="wizNextText">Далее</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <p class="modal-note">Или позвоните: <a href="tel:+74991588471">8 (499) 158-84-71</a></p>
+      </div>
+
+      <div class="form-ok" id="formOk">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        <h4>Заявка отправлена!</h4>
+        <p id="okSummary">Мы свяжемся с вами в ближайшее время в часы работы клиники.</p>
+        <div class="modal-phones">
+          <span>Или позвоните нам напрямую:</span>
+          <span>Сокол: <a href="tel:+74991588471">8 (499) 158-84-71</a></span>
+          <span>Беломорская: <a href="tel:+74954518238">8 (495) 451-82-38</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

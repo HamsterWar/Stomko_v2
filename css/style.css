@@ -1698,3 +1698,153 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
   .page-v2 .header .logo img { width: 60px; flex-basis: 60px; }
   .page-v2 .hero-full-in { padding-top: 112px; }
 }
+
+/* ============================================================
+   Версия 4: правки второго дизайн-ревью
+   Дополняет стили page-v2 и применяется только к index4.html.
+   ============================================================ */
+
+.page-v4 {
+  --green: #5fbc56;
+  --green-dark: #5fbc56;
+  --blue: #5fbc56;
+  --blue-dark: #5fbc56;
+  --grad: #5fbc56;
+  --grad-soft: rgba(95, 188, 86, .1);
+}
+
+.page-v4 .topbar {
+  background: var(--green);
+}
+
+.page-v4 .topbar-in {
+  justify-content: space-between;
+  gap: 10px 22px;
+}
+
+.page-v4 .topbar-branch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.page-v4 .topbar-item {
+  gap: 6px;
+}
+
+.page-v4 .topbar-item svg {
+  color: #fff;
+}
+
+.page-v4 .topbar-messenger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--green);
+  font-size: 11.5px;
+  font-weight: 800;
+  line-height: 1;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.page-v4 .topbar-messenger:hover {
+  background: #f1f2f1;
+  color: var(--green);
+}
+
+/* На фотографии пункты меню и название клиники читаются белым. */
+.page-v4 .header:not(.scrolled) .nav a,
+.page-v4 .header:not(.scrolled) .logo {
+  color: #fff;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .38);
+}
+
+.page-v4 .header:not(.scrolled) .logo small {
+  color: rgba(255, 255, 255, .88);
+}
+
+.page-v4 .header:not(.scrolled) .nav a:hover {
+  color: #fff;
+}
+
+.page-v4 .header:not(.scrolled) .nav a::after {
+  background: #fff;
+}
+
+.page-v4 .mobile-menu .mobile-messenger {
+  color: var(--green);
+  font-weight: 800;
+}
+
+/* Все основные карточки получают одинаковый светло-серый hover. */
+.page-v4 .stat,
+.page-v4 .promo,
+.page-v4 .service,
+.page-v4 .why-card,
+.page-v4 .doctor,
+.page-v4 .branch,
+.page-v4 .price-row {
+  transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.page-v4 .stat:hover,
+.page-v4 .promo:hover,
+.page-v4 .service:hover,
+.page-v4 .why-card:hover,
+.page-v4 .doctor:hover,
+.page-v4 .branch:hover,
+.page-v4 .price-row:hover {
+  background: #f1f2f1;
+  border-color: #dfe3e0;
+  box-shadow: var(--shadow-sm);
+  transform: none;
+}
+
+.page-v4 .doctor:hover .doctor-avatar {
+  transform: none;
+}
+
+.page-v4 .service::before {
+  background: #f1f2f1;
+}
+
+.page-v4 .service:hover .service-icon {
+  background: #e4e7e5;
+  color: var(--green);
+}
+
+/* В index4 все карточки акций светлые в обычном состоянии. */
+.page-v4 .promo,
+.page-v4 .promo.dark {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.page-v4 .promo p,
+.page-v4 .promo.dark p,
+.page-v4 .promo-note,
+.page-v4 .promo.dark .promo-note,
+.page-v4 .promo-price,
+.page-v4 .promo.dark .promo-price,
+.page-v4 .promo-price small,
+.page-v4 .promo.dark .promo-price small {
+  color: inherit;
+}
+
+.page-v4 .promo .promo-badge,
+.page-v4 .promo.dark .promo-badge {
+  color: var(--green);
+  border-bottom-color: var(--green);
+}
+
+@media (max-width: 1180px) {
+  .page-v4 .topbar-item span {
+    display: none;
+  }
+}
