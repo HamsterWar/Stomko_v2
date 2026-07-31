@@ -10,6 +10,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-v4 .topbar-socials {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .page-v4 .topbar-messenger.social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 27px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 50%;
+      background: #fff;
+      color: #5fbc56;
+      line-height: 1;
+    }
+    .page-v4 .topbar-messenger.social-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+    .page-v4 .topbar-messenger.social-icon:hover {
+      background: #eef4ed;
+      color: #3f9f38;
+      transform: translateY(-1px);
+    }
+  </style>
 </head>
 <body class="page-v2 page-v4" data-version="index4">
 
@@ -23,10 +54,14 @@
             <span>м. Сокол · Ленинградский пр-т, 77, к. 4</span>
             <b>8 (499) 158-84-71</b>
           </a>
-          <a class="topbar-messenger" href="https://wa.me/79260749710" target="_blank" rel="noopener" aria-label="Написать в WhatsApp — филиал на Соколе">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.2A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 8.5c.7 3.2 2.8 5.3 6 6"/></svg>
-            WhatsApp
-          </a>
+          <span class="topbar-socials" aria-label="Мессенджеры филиала на Соколе">
+            <a class="topbar-messenger social-icon" href="https://wa.me/79260749710" target="_blank" rel="noopener" aria-label="Написать в WhatsApp — филиал на Соколе" title="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.84 9.84 0 0 0-8.43 14.91L2 22l5.23-1.57A9.9 9.9 0 1 0 12.04 2Zm0 17.96a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.1.93.95-3.02-.2-.31a8.08 8.08 0 1 1 6.78 3.71Zm4.44-6.06c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21a7.31 7.31 0 0 1-1.36-1.69c-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.72 2.62 4.16 3.68.58.25 1.04.4 1.39.52.58.19 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z"/></svg>
+            </a>
+            <a class="topbar-messenger social-icon" href="tg://resolve?phone=79260749710" aria-label="Написать в Telegram — филиал на Соколе" title="Telegram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.75 3.42 18.6 20.1c-.24 1.18-.86 1.47-1.75.92l-4.8-3.54-2.31 2.23c-.26.26-.47.47-.97.47l.34-4.88 8.89-8.03c.39-.34-.08-.54-.6-.2L6.41 13.99l-4.73-1.48c-1.03-.32-1.05-1.03.22-1.53L20.4 3.85c.86-.32 1.61.2 1.35-.43Z"/></svg>
+            </a>
+          </span>
         </div>
         <div class="topbar-branch">
           <a class="topbar-item" href="tel:+74954518238">
@@ -34,10 +69,14 @@
             <span>м. Беломорская · ул. Беломорская, 26</span>
             <b>8 (495) 451-82-38</b>
           </a>
-          <a class="topbar-messenger" href="https://wa.me/79255054617" target="_blank" rel="noopener" aria-label="Написать в WhatsApp — филиал на Беломорской">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.2A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 8.5c.7 3.2 2.8 5.3 6 6"/></svg>
-            WhatsApp
-          </a>
+          <span class="topbar-socials" aria-label="Мессенджеры филиала на Беломорской">
+            <a class="topbar-messenger social-icon" href="https://wa.me/79255054617" target="_blank" rel="noopener" aria-label="Написать в WhatsApp — филиал на Беломорской" title="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.84 9.84 0 0 0-8.43 14.91L2 22l5.23-1.57A9.9 9.9 0 1 0 12.04 2Zm0 17.96a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.1.93.95-3.02-.2-.31a8.08 8.08 0 1 1 6.78 3.71Zm4.44-6.06c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21a7.31 7.31 0 0 1-1.36-1.69c-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.72 2.62 4.16 3.68.58.25 1.04.4 1.39.52.58.19 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z"/></svg>
+            </a>
+            <a class="topbar-messenger social-icon" href="tg://resolve?phone=79255054617" aria-label="Написать в Telegram — филиал на Беломорской" title="Telegram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.75 3.42 18.6 20.1c-.24 1.18-.86 1.47-1.75.92l-4.8-3.54-2.31 2.23c-.26.26-.47.47-.97.47l.34-4.88 8.89-8.03c.39-.34-.08-.54-.6-.2L6.41 13.99l-4.73-1.48c-1.03-.32-1.05-1.03.22-1.53L20.4 3.85c.86-.32 1.61.2 1.35-.43Z"/></svg>
+            </a>
+          </span>
         </div>
       </div>
     </div>
