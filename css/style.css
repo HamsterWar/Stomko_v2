@@ -1042,7 +1042,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
   background: #fff;
   border-radius: var(--radius-lg);
   padding: 42px 38px;
-  width: min(620px, 100%);
+  width: min(740px, 100%);
   position: relative;
   transform: translateY(24px) scale(0.97);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
@@ -1345,27 +1345,41 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 .modal-branch-phones {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 18px;
+  gap: 14px;
 }
 
-.modal-branch-phones > div {
+.modal-phone-section {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.modal-phone-title {
+  margin-bottom: 12px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.modal-phone-card {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   min-width: 0;
-  padding: 13px 15px;
+  padding: 17px 19px;
   border: 1px solid var(--line);
-  border-radius: 14px;
-  background: #f7faf8;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #f7faf8, #fff);
+  box-shadow: 0 5px 18px rgba(14, 42, 58, .06);
   text-align: left;
 }
 
-.modal-branch-phones strong { font-size: 13px; color: var(--ink); }
-.modal-branch-phones small { margin-top: 4px; color: var(--muted); font-size: 11px; }
-.modal-branch-phones a { width: fit-content; color: var(--ink-soft); font-size: 12.5px; font-weight: 700; }
+.modal-branch-phones strong { margin-bottom: 3px; color: var(--ink); font-size: 15px; }
+.modal-branch-phones .phone-kind { margin-top: 5px; color: var(--muted); font-size: 10.5px; font-weight: 700; letter-spacing: .02em; }
+.modal-branch-phones a { width: fit-content; color: var(--ink-soft); font-size: 13px; font-weight: 750; line-height: 1.35; }
 .modal-branch-phones a:hover { color: var(--green-dark); }
-.modal-branch-phones .primary-phone { color: var(--green-dark); font-size: 14px; font-weight: 900; }
+.modal-branch-phones .primary-phone { color: var(--green-dark); font-size: 16px; font-weight: 900; }
 .modal-branch-phones-success { margin-top: 20px; }
 
 .form-ok {
@@ -1785,6 +1799,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 .page-v4 .topbar-in {
   justify-content: space-between;
   gap: 10px 22px;
+  padding-block: 10px;
 }
 
 .page-v4 .topbar-branch {
@@ -1797,6 +1812,29 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 .page-v4 .topbar-item {
   gap: 6px;
 }
+
+.page-v4 .topbar-phone-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  white-space: nowrap;
+}
+
+.page-v4 .topbar-phone-stack a {
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.page-v4 .topbar-phone-stack .topbar-phone-extra {
+  color: rgba(255, 255, 255, .82);
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+.page-v4 .topbar-phone-stack a:hover { text-decoration: underline; }
 
 .page-v4 .topbar-item svg {
   color: #fff;
@@ -1909,7 +1947,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 }
 
 @media (max-width: 1180px) {
-  .page-v4 .topbar-item span {
+  .page-v4 .topbar-item .topbar-address {
     display: none;
   }
+  .page-v4 .topbar-phone-stack { display: flex; }
 }
