@@ -1,0 +1,196 @@
+/* Правовая информация, лицензии и уведомление Cookie — только index4 и страница политики. */
+
+.footer-legal {
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.footer-legal p + p { margin-top: 7px; }
+
+.footer-legal strong { color: var(--ink); }
+
+.license-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.license-thumb {
+  width: 56px;
+  height: 72px;
+  padding: 3px;
+  overflow: hidden;
+  border: 1px solid #d8e3df;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(14, 42, 58, .08);
+  cursor: zoom-in;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.license-thumb:hover,
+.license-thumb:focus-visible {
+  border-color: var(--green);
+  box-shadow: 0 5px 14px rgba(14, 42, 58, .14);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.license-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px;
+}
+
+.license-lightbox[hidden] { display: none; }
+
+.license-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
+
+.license-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: rgba(8, 23, 31, .84);
+  cursor: zoom-out;
+}
+
+.license-lightbox img {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  max-width: min(94vw, 1200px);
+  max-height: 92vh;
+  border-radius: 8px;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, .45);
+}
+
+.license-lightbox-close {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .35);
+  color: #fff;
+  font: 400 31px/1 Arial, sans-serif;
+  cursor: pointer;
+}
+
+.cookie-notice[hidden] { display: none; }
+
+.cookie-notice {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 250;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 12px 14px 12px 20px;
+  border: 1px solid rgba(95, 188, 86, .42);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 12px 34px rgba(14, 42, 58, .2);
+  font-size: 15px;
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+
+.cookie-notice button {
+  min-width: 54px;
+  padding: 8px 17px;
+  border: 0;
+  border-radius: 999px;
+  background: #5fbc56;
+  color: #fff;
+  font: 800 14px/1.2 var(--font-body, system-ui, sans-serif);
+  cursor: pointer;
+}
+
+.cookie-notice button:hover { background: #4aa642; }
+
+/* Страница политики. */
+.legal-page { background: #fff; }
+
+.legal-header {
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.legal-header-in {
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.legal-header .logo img { width: 72px; }
+
+.legal-back {
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.legal-main { padding: 62px 0 86px; }
+
+.legal-document { max-width: 900px; }
+
+.legal-document h1 {
+  margin-bottom: 32px;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.legal-document h2 {
+  margin: 42px 0 16px;
+  font-family: var(--font-body);
+  font-size: 23px;
+}
+
+.legal-document p {
+  margin-top: 13px;
+  color: var(--ink-soft);
+}
+
+.legal-document a {
+  color: var(--green-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 680px) {
+  .footer-legal { font-size: 13px; }
+  .license-thumb { width: 50px; height: 65px; }
+  .license-lightbox { padding: 18px; }
+  .cookie-notice { gap: 12px; bottom: 12px; padding-left: 16px; }
+  .legal-header-in { min-height: 82px; }
+  .legal-header .logo span { display: none; }
+  .legal-main { padding: 42px 0 68px; }
+  .legal-document h2 { margin-top: 34px; font-size: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .license-thumb { transition: none; }
+}
