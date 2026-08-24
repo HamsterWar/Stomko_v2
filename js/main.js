@@ -6,29 +6,33 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 // --- Шапка: фон при прокрутке ---
 const header = document.getElementById('header');
-const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+if (header) {
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
 
 // --- Мобильное меню ---
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
 
-burger.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  burger.classList.toggle('open', open);
-  burger.setAttribute('aria-expanded', String(open));
-  document.body.style.overflow = open ? 'hidden' : '';
-});
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
 
-mobileMenu.querySelectorAll('a').forEach((a) =>
-  a.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  })
-);
+  mobileMenu.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    })
+  );
+}
 
 // --- Появление блоков при прокрутке ---
 const revealObserver = new IntersectionObserver(
@@ -193,6 +197,7 @@ const doctorOptions = document.getElementById('doctorOptions');
 const wizSummary = document.getElementById('wizSummary');
 const fName = document.getElementById('fName');
 const fPhone = document.getElementById('fPhone');
+const fConsent = document.getElementById('fConsent');
 const calTitle = document.getElementById('calTitle');
 const calGrid = document.getElementById('calGrid');
 const calPrev = document.getElementById('calPrev');
@@ -207,7 +212,7 @@ const stepValid = () => {
     case 2: return Boolean(wizState.service);
     case 3: return Boolean(wizState.doctor);
     case 4: return Boolean(wizState.date);
-    case 5: return fName.value.trim().length > 1 && fPhone.value.replace(/\D/g, '').length >= 10;
+    case 5: return fName.value.trim().length > 1 && fPhone.value.replace(/\D/g, '').length >= 10 && fConsent.checked;
     default: return false;
   }
 };
@@ -356,6 +361,7 @@ function renderSummary() {
 }
 
 [fName, fPhone].forEach((input) => input.addEventListener('input', updateNext));
+fConsent.addEventListener('change', updateNext);
 
 // --- Навигация по шагам ---
 wizBack.addEventListener('click', () => {
@@ -386,6 +392,7 @@ const resetWizard = () => {
   calShown = new Date(calBase);
   fName.value = '';
   fPhone.value = '';
+  fConsent.checked = false;
   document.querySelectorAll('.opt-card').forEach((c) => c.classList.remove('selected'));
   wizard.style.display = '';
   formOk.style.display = 'none';
