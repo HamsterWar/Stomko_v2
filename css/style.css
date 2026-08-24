@@ -795,12 +795,14 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 .doctors-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 
 .doctor {
+  display: block;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 30px 24px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: inherit;
 }
 
 .doctor:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
@@ -1340,6 +1342,32 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 
 .modal-note a:hover { color: var(--blue); }
 
+.modal-branch-phones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.modal-branch-phones > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #f7faf8;
+  text-align: left;
+}
+
+.modal-branch-phones strong { font-size: 13px; color: var(--ink); }
+.modal-branch-phones small { margin-top: 4px; color: var(--muted); font-size: 11px; }
+.modal-branch-phones a { width: fit-content; color: var(--ink-soft); font-size: 12.5px; font-weight: 700; }
+.modal-branch-phones a:hover { color: var(--green-dark); }
+.modal-branch-phones .primary-phone { color: var(--green-dark); font-size: 14px; font-weight: 900; }
+.modal-branch-phones-success { margin-top: 20px; }
+
 .form-ok {
   display: none;
   text-align: center;
@@ -1394,6 +1422,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 }
 
 @media (max-width: 680px) {
+  .modal-branch-phones { grid-template-columns: 1fr; }
   .section { padding: 64px 0; }
   .hero { padding: 140px 0 70px; }
   .logo img { width: 56px; }
