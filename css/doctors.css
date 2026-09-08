@@ -21,7 +21,12 @@
   box-shadow: 0 22px 60px rgba(21, 50, 44, .16);
 }
 
-.doctor-profile-photo { object-fit: cover; object-position: center top; }
+.doctor-profile-photo {
+  display: block;
+  height: auto;
+  object-fit: cover;
+  object-position: center top;
+}
 
 .doctor-profile-placeholder {
   display: grid;
