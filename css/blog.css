@@ -125,6 +125,17 @@
 .blog-page .service-header-in nav a { color: var(--blog-ink); text-decoration: none; font-weight: 700; }
 .blog-page .service-header-in nav a.active { color: var(--blog-green-dark); }
 
+/* The blog catalogue is one level closer to the root than article pages. */
+.blog-page[data-root="../"] .topbar-item::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 .blog-hero {
   padding: 54px 0 70px;
   background:
