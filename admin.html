@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Админка «Оптимальный выбор»</title>
+  <meta name="description" content="Панель управления сайтом стоматологической клиники «Оптимальный выбор»">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235fbc56'/%3E%3Cpath d='M19 17c7-4 10 2 13 2s6-6 13-2c7 4 3 14 0 21-3 8-5 12-9 9-2-2-2-8-4-8s-2 6-4 8c-4 3-6-1-9-9-3-7-7-17 0-21Z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin-styles.css">
+  <style>[hidden]{display:none!important}</style>
+</head>
+<body>
+  <main id="loginView" class="login-view">
+    <section class="login-brand">
+      <div class="brand-lockup"><span class="tooth-mark">OV</span><div><strong>Оптимальный выбор</strong><small>Панель управления сайтом</small></div></div>
+      <div class="login-copy">
+        <span class="eyebrow">Контент под контролем</span>
+        <h1>Обновляйте сайт без работы с кодом</h1>
+        <p>Врачи, услуги, статьи, акции и SEO — в одном понятном интерфейсе.</p>
+      </div>
+      <div class="login-features">
+        <span>✓ История изменений</span><span>✓ Автоматическая публикация</span><span>✓ Два уровня доступа</span>
+      </div>
+    </section>
+    <section class="login-panel">
+      <form id="loginForm" class="login-card">
+        <div class="mobile-brand"><span class="tooth-mark">OV</span><strong>Оптимальный выбор</strong></div>
+        <span class="eyebrow">Вход в систему</span>
+        <h2>Добро пожаловать</h2>
+        <p>Введите логин и пароль.</p>
+        <label>Логин<input id="loginInput" autocomplete="username" value="admin" required></label>
+        <label>Пароль<div class="password-field"><input id="passwordInput" type="password" autocomplete="current-password" value="stomko2026" required><button type="button" id="togglePassword" aria-label="Показать пароль">👁</button></div></label>
+        <button class="primary-btn login-btn" type="submit">Войти в админку</button>
+        <div class="demo-accounts"><strong>Доступы для прототипа</strong><button type="button" data-demo-user="admin">Администратор: admin / stomko2026</button><button type="button" data-demo-user="manager">Менеджер: manager / content2026</button></div>
+      </form>
+    </section>
+  </main>
+
+  <div id="adminView" class="admin-shell" hidden>
+    <aside class="sidebar">
+      <div class="sidebar-brand"><span class="tooth-mark">OV</span><div><strong>Оптимальный выбор</strong><small>Администрирование</small></div></div>
+      <nav id="mainNav" aria-label="Разделы админки"></nav>
+      <div class="sidebar-footer"><button id="openSite" type="button">↗ Открыть сайт</button><button id="logoutBtn" type="button">⇥ Выйти</button></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <button id="menuToggle" class="menu-toggle" type="button" aria-label="Открыть меню">☰</button>
+        <div><h1 id="pageTitle">Обзор</h1><p id="pageSubtitle">Состояние сайта и последние изменения</p></div>
+        <div class="topbar-actions"><button class="icon-btn" type="button" aria-label="Уведомления">🔔<span></span></button><div class="user-chip"><span id="userAvatar">А</span><div><strong id="userName">Администратор</strong><small id="userRole">Полный доступ</small></div></div></div>
+      </header>
+      <section id="content" class="content" aria-live="polite"></section>
+    </div>
+  </div>
+
+  <div id="editorModal" class="modal" hidden>
+    <button class="modal-backdrop" type="button" data-close-modal aria-label="Закрыть"></button>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header><div><span class="eyebrow">Редактирование</span><h2 id="modalTitle">Карточка врача</h2></div><button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button></header>
+      <div class="editor-tabs"><button class="active" type="button" data-editor-tab="content">Содержание</button><button type="button" data-editor-tab="media">Фотография</button><button type="button" data-editor-tab="seo">SEO</button></div>
+      <form id="editorForm" class="editor-body">
+        <div class="editor-pane active" data-editor-pane="content"><div class="field-grid"><label>ФИО<input name="title" value="Марков Юрий Сергеевич"></label><label>Должность<input name="role" value="Главный врач · стоматолог-ортопед"></label></div><label>Краткое описание<textarea name="description" rows="4">Главный врач клиник «Оптимальный выбор» с опытом работы более 25 лет.</textarea></label><div class="field-grid"><label>Филиал<select><option>Оба филиала</option><option>Сокол</option><option>Беломорская</option></select></label><label>Статус<select><option>Опубликовано</option><option>Черновик</option><option>Скрыто</option></select></label></div></div>
+        <div class="editor-pane" data-editor-pane="media"><div class="upload-zone"><div class="avatar-preview">МЮ</div><strong>Фотография врача</strong><p>Перетащите изображение или выберите файл. Оно будет автоматически подготовлено для сайта.</p><button type="button" class="secondary-btn">Выбрать файл</button></div></div>
+        <div class="editor-pane" data-editor-pane="seo"><label>SEO-заголовок<input value="Марков Юрий Сергеевич — главный врач стоматологии"></label><label>Описание страницы<textarea rows="3">Главный врач и стоматолог-ортопед клиники «Оптимальный выбор». Опыт работы более 25 лет.</textarea></label><label>Адрес страницы<div class="slug-field"><span>/vrachi/</span><input value="markov-yuriy"></div></label><label class="check-row"><input type="checkbox" checked> Разрешить индексацию страницы</label></div>
+        <footer><span id="saveHint">Изменения будут опубликованы сразу</span><div><button class="secondary-btn" type="button" data-close-modal>Отмена</button><button class="primary-btn" type="submit">Сохранить и опубликовать</button></div></footer>
+      </form>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="admin-app.js"></script>
+</body>
+</html>
