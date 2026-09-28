@@ -1541,6 +1541,18 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; font-weight: 600; 
 .hero-full-dots .banner-dot:hover,
 .hero-full-dots .banner-dot.active { background: #fff; }
 
+/* На главном слайде показываем весь снимок, без обрезки по краям. */
+.hero-full .hero-slide {
+  background-size: cover;
+  background-position: center 22%;
+  background-repeat: no-repeat;
+  background-color: #dfe7e5;
+}
+
+@media (max-width: 680px) {
+  .hero-full .hero-slide { background-position: 72% 22%; }
+}
+
 @media (max-width: 1080px) {
   .hero-full { min-height: 640px; }
   .hero-full-in { padding-top: 140px; }
