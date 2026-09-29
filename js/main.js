@@ -168,7 +168,7 @@ document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(
 // Врачи и их направления (со старого сайта клиники)
 const DOCTORS = [
   { name: 'Любой доступный врач', spec: 'Мы подберём специалиста под вашу задачу', any: true, tags: [] },
-  { name: 'Марков Юрий Сергеевич', spec: 'Главный врач, стоматолог-ортопед, хирург', tags: ['prosthetics', 'surgery'] },
+  { name: 'Марков Юрий Сергеевич', spec: 'Главный врач, стоматолог-ортопед', tags: ['prosthetics'] },
   { name: 'Дарьина Валерия Николаевна', spec: 'Врач стоматолог-терапевт', tags: ['therapy', 'hygiene'] },
   { name: 'Девицкий Михаил Александрович', spec: 'Врач стоматолог-ортопед', tags: ['prosthetics'] },
   { name: 'Кибенко Юлия Дмитриевна', spec: 'Врач стоматолог-терапевт', tags: ['therapy', 'hygiene'] },
