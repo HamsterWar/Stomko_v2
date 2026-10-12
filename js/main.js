@@ -221,7 +221,22 @@ const DOCTORS = [
 // Для консультации и диагностики подходит любой врач
 const OPEN_SERVICES = ['consult', 'diagnostics'];
 
-const STEP_TITLES = ['Филиал', 'Услуга', 'Врач', 'Дата приёма', 'Ваши контакты'];
+// В заявке посетитель выбирает только филиал и услугу, затем оставляет контакты.
+// Старые HTML-шаблоны ещё содержат шаги врача и даты — убираем их здесь,
+// чтобы обновление применялось сразу ко всем страницам сайта и блога.
+(() => {
+  const wizardRoot = document.getElementById('wizard');
+  if (!wizardRoot) return;
+  wizardRoot.querySelector('[data-pane="3"]')?.remove();
+  wizardRoot.querySelector('[data-pane="4"]')?.remove();
+  wizardRoot.querySelector('[data-pane="5"]')?.setAttribute('data-pane', '3');
+  const label = wizardRoot.querySelector('.wiz-step-label');
+  if (label) label.innerHTML = 'Шаг <span id="wizStepNum">1</span> из 3';
+  const progress = wizardRoot.querySelector('#wizProgress');
+  if (progress) [...progress.children].slice(3).forEach((el) => el.remove());
+})();
+
+const STEP_TITLES = ['Филиал', 'Услуга', 'Ваши контакты'];
 
 const modal = document.getElementById('modal');
 const wizard = document.getElementById('wizard');
@@ -250,9 +265,7 @@ const stepValid = () => {
   switch (wizStep) {
     case 1: return Boolean(wizState.branch);
     case 2: return Boolean(wizState.service);
-    case 3: return Boolean(wizState.doctor);
-    case 4: return Boolean(wizState.date);
-    case 5: return fName.value.trim().length > 1 && fPhone.value.replace(/\D/g, '').length >= 10 && fConsent.checked;
+    case 3: return fName.value.trim().length > 1 && fPhone.value.replace(/\D/g, '').length >= 10 && fConsent.checked;
     default: return false;
   }
 };
@@ -270,10 +283,8 @@ const setStep = (n) => {
   wizTitle.textContent = STEP_TITLES[n - 1];
   [...wizProgress.children].forEach((s, i) => s.classList.toggle('done', i < n));
   wizBack.disabled = n === 1;
-  wizNextText.textContent = n === 5 ? 'Отправить заявку' : 'Далее';
-  if (n === 3) renderDoctors();
-  if (n === 4) renderCal();
-  if (n === 5) renderSummary();
+  wizNextText.textContent = n === 3 ? 'Отправить заявку' : 'Далее';
+  if (n === 3) renderSummary();
   updateNext();
 };
 
@@ -288,7 +299,6 @@ document.querySelectorAll('[data-group]').forEach((group) => {
     if (g === 'branch') {
       wizState.branch = card.dataset.value;
     } else if (g === 'service') {
-      if (wizState.service !== card.dataset.value) wizState.doctor = null;
       wizState.service = card.dataset.value;
       wizState.serviceLabel = card.querySelector('.t').textContent.trim();
     } else if (g === 'doctor') {
@@ -375,12 +385,12 @@ function renderCal() {
   }
 }
 
-calPrev.addEventListener('click', () => {
+calPrev?.addEventListener('click', () => {
   calShown = new Date(calShown.getFullYear(), calShown.getMonth() - 1, 1);
   renderCal();
 });
 
-calNext.addEventListener('click', () => {
+calNext?.addEventListener('click', () => {
   calShown = new Date(calShown.getFullYear(), calShown.getMonth() + 1, 1);
   renderCal();
 });
@@ -392,8 +402,6 @@ function renderSummary() {
   const rows = [
     ['Филиал', wizState.branch],
     ['Услуга', wizState.serviceLabel],
-    ['Врач', wizState.doctor],
-    ['Дата', wizState.date ? fmtDate(wizState.date) : ''],
   ];
   wizSummary.innerHTML = rows
     .map(([k, v]) => `<div class="sum-row"><span>${k}</span><b>${v}</b></div>`)
@@ -410,14 +418,14 @@ wizBack.addEventListener('click', () => {
 
 wizNext.addEventListener('click', () => {
   if (!stepValid()) return;
-  if (wizStep < 5) {
+  if (wizStep < 3) {
     setStep(wizStep + 1);
   } else {
     // Прототип: показываем подтверждение без отправки на сервер
     wizard.style.display = 'none';
     formOk.style.display = 'block';
     okSummary.textContent =
-      `${wizState.branch} · ${wizState.serviceLabel} · ${wizState.doctor} · ${fmtDate(wizState.date)} — ` +
+      `${wizState.branch} · ${wizState.serviceLabel} — ` +
       'мы перезвоним вам в часы работы клиники и подтвердим запись.';
   }
 });
