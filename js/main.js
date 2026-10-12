@@ -419,3 +419,52 @@ modal.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
 });
+
+// Исправления карточек врачей и документы главного врача.
+(() => {
+  const profile = document.querySelector('.doctor-profile-main');
+  if (!profile) return;
+
+  profile.querySelectorAll('li').forEach((item) => {
+    item.textContent = item.textContent.replace(', в том числе на драгоценных сплавах', '');
+  });
+
+  if (!location.pathname.includes('/vrachi/markov-yuriy')) return;
+
+  const docs = [
+    ['education.pdf', 'education.webp', 'Образование', 'Документ об образовании'],
+    ['qualification.pdf', 'qualification.webp', 'Квалификация', 'Документ о квалификации'],
+    ['diploma-1.pdf', 'diploma-1.webp', 'Диплом', 'Диплом специалиста'],
+    ['diploma-2.pdf', 'diploma-2.webp', 'Диплом', 'Диплом специалиста'],
+    ['advanced-training.pdf', 'advanced-training.webp', 'Повышение квалификации', 'Документ о повышении квалификации'],
+    ['certificate.pdf', 'certificate.webp', 'Сертификат', 'Сертификат специалиста'],
+    ['certificate-specialist.pdf', 'certificate-specialist.webp', 'Сертификат', 'Сертификат специалиста'],
+  ];
+  const base = '../../assets/doctors/documents/markov-yuriy/';
+  const section = document.createElement('section');
+  section.className = 'doctor-documents';
+  section.id = 'documents';
+  section.innerHTML = `<div class="doctor-documents-head"><div><span class="section-tag">Подтверждено документами</span><h2>Документы и квалификация</h2><p>Дипломы, сертификаты и документы о профессиональном развитии врача доступны для просмотра.</p></div><span class="doctor-documents-count">${docs.length} документов</span></div><div class="doctor-documents-grid">${docs.map(([file, thumb, type, title]) => `<button class="doctor-document-card" type="button" data-markov-document data-document-src="${base}${file}" data-document-title="${title}"><span class="doctor-document-preview"><img src="${base}thumbs/${thumb}" alt="${title}" loading="lazy" width="480" height="640"><span class="doctor-document-zoom" aria-hidden="true">⌕</span></span><span class="doctor-document-body"><span class="doctor-document-type">${type}</span><strong>${title}</strong><span class="doctor-document-open">Посмотреть документ <span aria-hidden="true">→</span></span></span></button>`).join('')}</div>`;
+  profile.append(section);
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'doctor-document-lightbox';
+  lightbox.hidden = true;
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.innerHTML = '<button class="doctor-document-lightbox-backdrop" type="button" aria-label="Закрыть"></button><div class="doctor-document-lightbox-dialog"><button class="doctor-document-lightbox-close" type="button" aria-label="Закрыть">×</button><p class="markov-document-label"></p><div class="doctor-document-lightbox-content"></div><a class="doctor-document-original" target="_blank" rel="noopener">Открыть оригинал в новой вкладке <span aria-hidden="true">↗</span></a></div>';
+  document.body.append(lightbox);
+  const close = () => { lightbox.hidden = true; lightbox.querySelector('.doctor-document-lightbox-content').replaceChildren(); document.body.classList.remove('document-lightbox-open'); };
+  lightbox.querySelectorAll('button').forEach((button) => button.addEventListener('click', close));
+  profile.querySelectorAll('[data-markov-document]').forEach((button) => button.addEventListener('click', () => {
+    const src = button.dataset.documentSrc;
+    const frame = document.createElement('iframe');
+    frame.src = src;
+    frame.title = button.dataset.documentTitle;
+    lightbox.querySelector('.markov-document-label').textContent = button.dataset.documentTitle;
+    lightbox.querySelector('.doctor-document-lightbox-content').replaceChildren(frame);
+    lightbox.querySelector('.doctor-document-original').href = src;
+    lightbox.hidden = false;
+    document.body.classList.add('document-lightbox-open');
+  }));
+})();
