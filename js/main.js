@@ -122,6 +122,47 @@ document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(
   restart();
 })();
 
+// Документы врача Дарьиной Валерии Николаевны.
+(() => {
+  const profile = document.querySelector('.doctor-profile-main');
+  if (!profile || !location.pathname.includes('/vrachi/daryina-valeriya')) return;
+  const docs = [
+    ['education.pdf', 'education.webp', 'Образование', 'Документ об образовании'],
+    ['qualification.pdf', 'qualification.webp', 'Квалификация', 'Документ о квалификации'],
+    ['diploma.pdf', 'diploma.webp', 'Диплом', 'Диплом специалиста'],
+    ['certificate.pdf', 'certificate.webp', 'Сертификат', 'Сертификат специалиста'],
+    ['certificate-specialist.pdf', 'certificate-specialist.webp', 'Сертификат', 'Сертификат специалиста'],
+    ['registry-extract.pdf', 'registry-extract.webp', 'Реестр', 'Выписка из реестра'],
+  ];
+  const base = '../../assets/doctors/documents/daryina-valeriya/';
+  const section = document.createElement('section');
+  section.className = 'doctor-documents';
+  section.id = 'documents';
+  section.innerHTML = `<div class="doctor-documents-head"><div><span class="section-tag">Подтверждено документами</span><h2>Документы и квалификация</h2><p>Дипломы, сертификаты и документы о профессиональном развитии врача доступны для просмотра.</p></div><span class="doctor-documents-count">${docs.length} документов</span></div><div class="doctor-documents-grid">${docs.map(([file, thumb, type, title]) => `<button class="doctor-document-card" type="button" data-daryina-document data-document-src="${base}${file}" data-document-title="${title}"><span class="doctor-document-preview"><img src="${base}thumbs/${thumb}" alt="${title}" loading="lazy" width="480" height="640"><span class="doctor-document-zoom" aria-hidden="true">⌕</span></span><span class="doctor-document-body"><span class="doctor-document-type">${type}</span><strong>${title}</strong><span class="doctor-document-open">Посмотреть документ <span aria-hidden="true">→</span></span></span></button>`).join('')}</div>`;
+  profile.append(section);
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'doctor-document-lightbox';
+  lightbox.hidden = true;
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.innerHTML = '<button class="doctor-document-lightbox-backdrop" type="button" aria-label="Закрыть"></button><div class="doctor-document-lightbox-dialog"><button class="doctor-document-lightbox-close" type="button" aria-label="Закрыть">×</button><p class="daryina-document-label"></p><div class="doctor-document-lightbox-content"></div><a class="doctor-document-original" target="_blank" rel="noopener">Открыть оригинал в новой вкладке <span aria-hidden="true">↗</span></a></div>';
+  document.body.append(lightbox);
+  const close = () => { lightbox.hidden = true; lightbox.querySelector('.doctor-document-lightbox-content').replaceChildren(); document.body.classList.remove('document-lightbox-open'); };
+  lightbox.querySelectorAll('button').forEach((button) => button.addEventListener('click', close));
+  profile.querySelectorAll('[data-daryina-document]').forEach((button) => button.addEventListener('click', () => {
+    const src = button.dataset.documentSrc;
+    const frame = document.createElement('iframe');
+    frame.src = src;
+    frame.title = button.dataset.documentTitle;
+    lightbox.querySelector('.daryina-document-label').textContent = button.dataset.documentTitle;
+    lightbox.querySelector('.doctor-document-lightbox-content').replaceChildren(frame);
+    lightbox.querySelector('.doctor-document-original').href = src;
+    lightbox.hidden = false;
+    document.body.classList.add('document-lightbox-open');
+  }));
+})();
+
 // --- Версия 2: полноэкранный фотослайдер в hero (index2.html) ---
 (() => {
   const hero = document.getElementById('heroSlider');
